@@ -32,14 +32,15 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public List<Todo> getTodos() {
-        return todoService.findAll();
+    public List<Todo> getTodos(String id) {
+
+        return todoService.getTodosById(id);
     }
 
     @Override
-    public Boolean deleteChecked() {
+    public Boolean deleteChecked(String id) {
         try{
-            List<Todo> lista = getTodos();
+            List<Todo> lista = getTodos(id);
             for (Todo t: lista) {
                 if(t.getChecked()) {
                     deleteTodo(t.getId());

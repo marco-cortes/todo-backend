@@ -19,4 +19,5 @@ public class Todo {
     private Long id;
     private String text;
     private Boolean checked;
+    private String user;
 }

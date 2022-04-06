@@ -7,6 +7,6 @@ import java.util.List;
 public interface TodoService {
     Todo saveTodo(Todo todo);
     Boolean deleteTodo(Long todo);
-    List<Todo> getTodos();
-    Boolean deleteChecked();
+    List<Todo> getTodos(String id);
+    Boolean deleteChecked(String id);
 }
