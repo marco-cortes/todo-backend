@@ -37,7 +37,7 @@ public class TodoServiceImpl implements TodoService {
         List<Todo> lista = todoService.getTodosById(id);
         if(lista == null)
             lista = new ArrayList<>();
-        return lista;
+        return new ArrayList<>();
     }
 
     @Override
