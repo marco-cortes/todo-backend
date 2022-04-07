@@ -46,7 +46,7 @@ public class TodoResource {
 
     private void authorization(String token){
         try {
-            new RestTemplate().exchange("http://localhost:4000/api/auth/validate", HttpMethod.GET, new HttpEntity<String>(new HttpHeaders(){{
+            new RestTemplate().exchange("https://marco-cortes-auth.herokuapp.com/api/auth/validate", HttpMethod.GET, new HttpEntity<String>(new HttpHeaders(){{
                 set("x-token", token);
             }}), String.class);
         } catch (Exception e) {
