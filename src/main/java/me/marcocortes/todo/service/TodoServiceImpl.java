@@ -7,6 +7,7 @@ import me.marcocortes.todo.repo.TodoRepo;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,8 +34,10 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public List<Todo> getTodos(String id) {
-
-        return todoService.getTodosById(id);
+        List<Todo> lista = todoService.getTodosById(id);
+        if(lista == null)
+            lista = new ArrayList<>();
+        return lista;
     }
 
     @Override
